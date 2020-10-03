@@ -1,0 +1,53 @@
+.popular_products {
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+    h2 {
+        width: fit-content;
+        .line {
+            width: 80%;
+            height: 2px;
+            border-radius: 5px;
+            margin-top: 2px;
+            background-color: #ef5466;
+        }
+    }
+}
+
+.products_grid {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+
+.product {
+    margin: 30px auto;
+    img {
+        width: 200px;
+        transition: opacity .3s ease-in-out;
+
+        &:hover {
+            opacity: .75;
+        }
+    }
+
+    .product_details {
+        a {
+            margin-top: 2px;
+            transition: color .3s ease-in-out;
+            &:hover {
+                color: #ef5466;
+            }
+        }
+
+        p {
+            margin-top: 2px;
+
+
+            &:nth-last-child(1) {
+                color: #03de03;
+            }
+        }
+
+       
+    }
+}
