@@ -11,11 +11,11 @@
 
     <div class="navbar">
         <div class="container">
-                <a href="#" class="brand">Brand Clothes</a>
+            <a href="{{ route('home') }}" class="brand">Brand Clothes</a>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Cart</a></li>
+                <li><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="{{ route('shop') }}">Shop</a></li>
+                <li><a href="">Cart</a></li>
             </ul>
         </div>
     </div>
@@ -30,5 +30,7 @@
             <p class="shotout">Made with <span>❤</span> by <a href="https://github.com/marwaneahansal" target="_blank">Marwane ahansal</a></p>
         </div>
     </div>
+
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js" type="module"></script>
 </body>
 </html>

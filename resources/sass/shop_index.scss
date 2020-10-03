@@ -1,0 +1,165 @@
+.filters {
+    margin-top: 30px;
+    margin-right: 50px;
+    border: 1px #d8d8d8 solid;
+    border-radius: 8px;
+    padding: 1rem;
+    height: 60vh;
+
+    .search {
+        display: flex;
+        align-items: center;
+
+        input {
+            border: none;
+            width: 90%;
+            padding: 7px 0 6px 6px;
+            font-size: 18px;
+            border-radius: 5px 0 0 5px;
+
+            &:focus  {
+                outline: none;
+            }
+        }
+
+
+        .search_btn {
+            background-color: #007BFF;
+            padding: 5px;
+            margin-left: -1px;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .search_icon {
+                color: #f8f8f8;
+                margin: auto 0;
+                font-size: 24px;
+            }
+        }
+    }
+
+
+    .filter_price {
+        margin-top: 30px;
+        p {
+            font-size: 20px;
+        }
+
+        .price_form {
+            display: flex;
+            align-items: center;
+            padding-left: 5px;
+            .min, .max {
+                margin-top: 10px;
+                margin-left: 10px;
+                input {
+                    width: 90%;
+                    margin-top: 5px;
+                    display: block;
+                    border: none;
+                    padding: 7px 0 6px 6px;
+                    font-size: 18px;
+                    border-radius: 5px;
+                }
+                
+            }
+
+            
+        }
+
+        a {
+            display: block;
+            width: 90%;
+            margin: 0 auto;
+            background-color: #007BFF;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+}
+
+
+.shop {
+    display: flex;
+    margin-top: 30px;
+    
+
+    .filters {
+        width: 30%;
+    }
+
+    .shop_products {
+        flex: 1;
+    
+        .product {
+            margin-bottom: 40px;
+            display: flex;
+
+            img {
+                width: 300px;
+            }
+
+            .product_details  {
+                font-size: 1.4rem;
+                margin-left: 20px;
+
+                p {
+                    margin-top: 10px;
+                }
+
+                .available {
+                    color: #03de03;
+                }
+            }
+
+            .buttons {
+                margin-top: 30px;
+                display: flex;
+                align-items: center;
+                a {
+                    border-radius: 8px;
+                    margin-right: 20px;
+
+                    .line {
+                        height: 2px;
+                        width: 0;
+                        margin: 0 auto;
+                        border-radius: 5px;
+                        background-color: #e86d7b;
+                        transition: all .5s ease-in-out ;
+                    }
+
+                    &:hover {
+                        color: #f8f8f8;
+                        .line {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .addCart {
+                    padding: 1rem 1.2rem;
+                    background-color: #e86d7b;
+                    color: #000000;
+                    transition: background-color .5s ease-in;
+
+                    &:hover {
+                        background-color: transparent;
+                        color: #f8f8f8;
+                    }
+                }
+
+
+                
+            }
+        }
+
+    }
+}
