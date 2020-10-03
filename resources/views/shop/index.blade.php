@@ -21,22 +21,28 @@
                         <input type="text" name="maxPrice" id="maxPrice" placeholder="9999">
                     </div>
                 </div>
-                <a href="#">Apply</a>
+                <div class="applyBtn">
+                    <a href="#">Apply</a>
+                </div>
             </div>
         </div>
 
         <div class="shop_products">
             @for ($i = 0; $i < 12; $i++)
                 <div class="product">
-                    <a href="#"><img src="/assets/tracksuits.jpg" alt="tracksuits"></a>
+                    <a href="{{ route('shop.show', '1234') }}"><img src="/assets/tracksuits.jpg" alt="tracksuits"></a>
                     <div class="product_details">
-                        <a href="#">Track suits for men</a>
+                        <a href="{{ route('shop.show', '1234') }}">Track suits for men</a>
                         <p class="price">29.99$</p>
                         <p class="available">In stock</p>
 
                         <div class="buttons">
-                            <a href="#">See Details <div class="line"></div></a>
-                            <a href="#" class="addCart">Add to Cart</a>
+                            <div class="seeDetails">
+                                <a href="{{ route('shop.show', '1234') }}">See Details <div class="line"></div></a>
+                            </div>
+                            <div class="addCart">
+                                <a href="#">Add to Cart</a>
+                            </div>
                         </div>
                     </div>
                 </div>

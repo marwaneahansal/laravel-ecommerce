@@ -16,7 +16,7 @@
                             <p class="price">29.99$</p>
                             <p>In stock</p>
                         </div>
-                        <a href="#">Add to Cart</a>
+                        <div class="addCart"><a href="#">Add to Cart</a></div>
                     </div>
                 @endfor
             </div>

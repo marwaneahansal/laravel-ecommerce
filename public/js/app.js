@@ -19330,7 +19330,18 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    size = _require.size;
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+var sizesElm = document.querySelectorAll(".size>div");
+console.log(sizesElm);
+document.querySelector('.size').addEventListener('click', function (elem) {
+  sizesElm.forEach(function (size) {
+    if (elem.target === size) elem.target.classList.toggle("selected");else size.classList.remove("selected");
+  });
+});
 
 /***/ }),
 
