@@ -34,6 +34,13 @@
                         <div class="size2XL">2XL</div>
                     </div>
                 </div>
+
+                <div class="qte">
+                    <label for="qteInput">Quantity:</label>
+                    <input type="number" id="qteInput" min="1" max="99" value="1">
+                </div>
+
+                <p class="total">Total: 22.99$</p>
                 <p class="available">In stock</p>
 
                 <div class="addCart">
@@ -44,7 +51,7 @@
         </div>
 
         <div class="otherProducts">
-            <h2>Recommendation Products:</h2>
+            <h2>Products you might like:</h2>
             <div class="products_grid">
                 @for ($i = 0; $i < 4; $i++)
                     <div class="product">

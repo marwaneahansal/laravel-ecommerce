@@ -15,7 +15,7 @@
             <ul>
                 <li><a href="{{ route('home') }}">Home</a></li>
                 <li><a href="{{ route('shop.index') }}">Shop</a></li>
-                <li><a href="">Cart</a></li>
+                <li><a href="{{ route('cart.index') }}">Cart</a></li>
             </ul>
         </div>
     </div>
