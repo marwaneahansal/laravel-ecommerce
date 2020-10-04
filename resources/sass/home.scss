@@ -53,24 +53,22 @@
     }
 
     .addCart {
-        width: 60%;
+        width: 100%;
         cursor: pointer;
+        margin-top: 10px;
         text-align: center;
-        padding: .8rem 0;
-        border: 1px #e86d7b solid;
-        background-color: #e86d7b;
+        padding: .5rem 0;
+        border: 1px #007BFF solid;
+        background-color: #007BFF;
         border-radius: 5px;
         transition: background-color .5s ease-in;
 
         a {
-            color: #000000;
+            color: #f8f8f8;
         }
 
         &:hover {
             background-color: transparent;
-            a {
-                color: #f8f8f8;
-            }
         }
     }
 }

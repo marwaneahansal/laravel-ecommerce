@@ -53,12 +53,12 @@
                 
                 <div class="row">
                     <p>Discount:</p>
-                    <p>0.00$</p>
+                    <p>- 0.00$</p>
                 </div>
 
                 <div class="row">
                     <p>Tax:</p>
-                    <p>5.00$</p>
+                    <p>+ 5.00$</p>
                 </div>
 
                 <div class="line"></div>

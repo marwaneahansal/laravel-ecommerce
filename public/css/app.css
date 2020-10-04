@@ -131,26 +131,23 @@ a {
 }
 
 .product .addCart {
-  width: 60%;
+  width: 100%;
   cursor: pointer;
+  margin-top: 10px;
   text-align: center;
-  padding: 0.8rem 0;
-  border: 1px #e86d7b solid;
-  background-color: #e86d7b;
+  padding: 0.5rem 0;
+  border: 1px #007BFF solid;
+  background-color: #007BFF;
   border-radius: 5px;
   transition: background-color 0.5s ease-in;
 }
 
 .product .addCart a {
-  color: #000000;
+  color: #f8f8f8;
 }
 
 .product .addCart:hover {
   background-color: transparent;
-}
-
-.product .addCart:hover a {
-  color: #f8f8f8;
 }
 
 .filters {
@@ -310,7 +307,7 @@ a {
   transition: all 0.5s ease-in-out;
 }
 
-.shop .shop_products .product .buttons .seeDetails:hover {
+.shop .shop_products .product .buttons .seeDetails:hover a {
   color: #f8f8f8;
 }
 
@@ -322,23 +319,19 @@ a {
   width: 40%;
   cursor: pointer;
   text-align: center;
-  padding: 0.8rem 0;
-  border: 1px #e86d7b solid;
-  background-color: #e86d7b;
+  padding: 0.6rem 0;
+  border: 1px #007BFF solid;
+  background-color: #007BFF;
   border-radius: 5px;
-  transition: background-color 0.5s ease-in;
+  transition: background-color 0.3s ease-in;
 }
 
 .shop .shop_products .product .buttons .addCart a {
-  color: #000000;
+  color: #f8f8f8;
 }
 
 .shop .shop_products .product .buttons .addCart:hover {
   background-color: transparent;
-}
-
-.shop .shop_products .product .buttons .addCart:hover a {
-  color: #f8f8f8;
 }
 
 .productDetails {
@@ -375,14 +368,14 @@ a {
   cursor: pointer;
   text-align: center;
   padding: 0.8rem 0;
-  border: 1px #e86d7b solid;
-  background-color: #e86d7b;
+  border: 1px #007BFF solid;
+  background-color: #007BFF;
   border-radius: 5px;
-  transition: background-color 0.5s ease-in;
+  transition: background-color 0.3s ease-in;
 }
 
 .productDetails .product_details .addCart a {
-  color: #000000;
+  color: #f8f8f8;
   font-size: 1.2rem;
 }
 
@@ -522,6 +515,7 @@ a {
   display: flex;
   border: 1px #9a9a9a solid;
   border-radius: 8px;
+  min-height: 100vh;
 }
 
 .table .cart_products {
