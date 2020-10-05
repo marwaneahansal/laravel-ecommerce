@@ -8,17 +8,21 @@
             <h2>Our Clothes: <div class="line"></div></h2>
 
             <div class="products_grid">
-                @for ($i = 0; $i < 8; $i++)
+                @foreach ($products as $product)
                     <div class="product">
-                        <a href="#"><img src="/assets/tracksuits.jpg" alt="tracksuits"></a>
+                        <a href="{{ route('shop.show', $product->formatUrl()) }}"><img src="/assets/tracksuits.jpg" alt="tracksuits"></a>
                         <div class="product_details">
-                            <a href="#">Track suits for men</a>
-                            <p class="price">29.99$</p>
-                            <p>In stock</p>
+                            <a href="{{ route('shop.show', $product->formatUrl()) }}">{{ $product->name }}</a>
+                            <p class="price">{{ $product->formatPrice() }}$</p>
+                            @if ($product->quantity > 0)
+                                <p class="inStock">In stock</p>
+                            @else 
+                                <p class="outOfStock">Out of stock</p>
+                            @endif
                         </div>
                         <div class="addCart"><a href="#">Add to Cart</a></div>
                     </div>
-                @endfor
+                @endforeach
             </div>
         </div>
 

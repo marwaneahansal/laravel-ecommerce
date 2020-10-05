@@ -43,10 +43,16 @@
             margin-top: 2px;
 
 
-            &:last-child {
-                color: #03de03;
-                margin-bottom: 1px;
-            }
+           
+        }
+
+        .inStock {
+            color: #03de03;
+            margin-bottom: 1px;
+        }
+        .outOfStock {
+            color: #ef5466;
+            margin-bottom: 1px;
         }
 
        

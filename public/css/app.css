@@ -125,8 +125,13 @@ a {
   margin-top: 2px;
 }
 
-.product .product_details p:last-child {
+.product .product_details .inStock {
   color: #03de03;
+  margin-bottom: 1px;
+}
+
+.product .product_details .outOfStock {
+  color: #ef5466;
   margin-bottom: 1px;
 }
 
