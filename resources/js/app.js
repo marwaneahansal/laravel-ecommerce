@@ -2,7 +2,8 @@ const { size } = require('lodash');
 
 require('./bootstrap');
 
-var sizesElm = document.querySelectorAll(".size>div");
+let sizesElm = document.querySelectorAll(".size>div");
+let quantityElem = document.getElementById('qteInput');
 
 if(document.querySelector(".size")) {
     document.querySelector('.size').addEventListener('click', (elem) => {
@@ -11,5 +12,19 @@ if(document.querySelector(".size")) {
             else size.classList.remove("selected");
         })
     });
+}
+
+
+if(quantityElem) {
+
+    quantityElem.addEventListener('input', () => {
+        let shopTotalElem = document.querySelector('.product_details .total');
+        let price = document.querySelector('.product_details .price').innerHTML;
+
+        price = price.replace('Price: ', '').replace('$', '');
+        shopTotalElem.innerHTML = `Total: ${(price * quantityElem.value).toFixed(2)}$`;
+
+    });
+
     
 }

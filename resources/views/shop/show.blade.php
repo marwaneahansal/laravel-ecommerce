@@ -4,22 +4,22 @@
 @section('content')
     <div class="container">
         <div class="productDetails">
-            <img src="/assets/tracksuits.jpg" alt="tracksuits">
+            <div>
+                <img src="/assets/tracksuits.jpg" alt="tracksuits">
+            </div>
             <div class="product_details">
-                <p class="name">Track suits for men</p>
-                <p class="price">Price: 29.99$</p>
+                <p class="name">{{ $product->name }}</p>
+                <p class="price">Price: {{ $product->formatPrice() }}$</p>
 
-                <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure magnam earum eaque. Dicta dolores eius modi voluptatum labore recusandae neque.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ab?
+                <p class="description">{{ $product->description}}
                 </p>
                 <div class="colors">
                     <p>Color: </p>
                     <select name="color" id="color">
-                        <option value="default">Choose color</option>
-                        <option value="blue">Blue</option>
-                        <option value="black">Black</option>
-                        <option value="red">Red</option>
-                        <option value="white">White</option>
+                        <option value="default">Choose a color</option>
+                        @foreach ($product->colors as $color)
+                            <option value="{{ $color }}">{{ $color }}</option>
+                        @endforeach
                     </select>
                 </div>
 
@@ -27,20 +27,18 @@
                     <p>Size:</p>
 
                     <div class="size">
-                        <div class="sizeSM">SM</div>
-                        <div class="sizeM">M</div>
-                        <div class="sizeL">L</div>
-                        <div class="sizeXL">XL</div>
-                        <div class="size2XL">2XL</div>
+                        @foreach ($product->sizes as $size)
+                            <div>{{ $size }}</div>
+                        @endforeach
                     </div>
                 </div>
 
                 <div class="qte">
                     <label for="qteInput">Quantity:</label>
-                    <input type="number" id="qteInput" min="1" max="99" value="1">
+                    <input type="number" id="qteInput" min="1" max="{{ $product->quantity }}" value="1">
                 </div>
 
-                <p class="total">Total: 22.99$</p>
+                <p class="total">Total: {{ $product->price }}$</p>
                 <p class="available">In stock</p>
 
                 <div class="addCart">
@@ -53,17 +51,21 @@
         <div class="otherProducts">
             <h2>Products you might like:</h2>
             <div class="products_grid">
-                @for ($i = 0; $i < 4; $i++)
+                @foreach ($recProducts as $product)
                     <div class="product">
-                        <a href="{{ route('shop.show', '1234') }}"><img src="/assets/tracksuits.jpg" alt="tracksuits"></a>
+                        <a href="{{ route('shop.show', $product->formatUrl()) }}"><img src="/assets/tracksuits.jpg" alt="tracksuits"></a>
                         <div class="product_details">
-                            <a href="{{ route('shop.show', '1234') }}">Track suits for men</a>
-                            <p class="price">29.99$</p>
-                            <p class="available">In stock</p>
+                            <a href="{{ route('shop.show', $product->formatUrl()) }}">{{ $product->name }}</a>
+                            <p class="price">{{ $product->price }}$</p>
+                            @if ($product->quatity < 0)
+                                <p class="inStock">In stock</p>
+                            @else
+                                <p class="outOfStock">Out of stock</p>
+                            @endif
 
                         </div>
-                    </div>
-                @endfor
+                    </div> 
+                @endforeach
             </div>
             
         </div>
