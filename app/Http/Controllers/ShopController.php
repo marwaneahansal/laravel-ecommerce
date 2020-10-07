@@ -21,4 +21,10 @@ class ShopController extends Controller
         $recommandedProducts = Product::where('name', '!=', $name)->get()->random(4);
         return view('shop.show', ['product' => $product, 'recProducts' => $recommandedProducts]);
     }
+
+    public function search(Request $request) {
+        $searchQuery = $request->input('searchQuery');
+        $products = Product::where('name', 'like', "%".$searchQuery."%")->Paginate(5);
+        return view('shop.search', ['products' => $products]);
+    }
 }

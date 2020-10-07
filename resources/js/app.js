@@ -1,4 +1,4 @@
-const { size } = require('lodash');
+import 'alpinejs';
 
 require('./bootstrap');
 

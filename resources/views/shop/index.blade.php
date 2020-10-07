@@ -6,10 +6,11 @@
         <div class="shop">
             <div class="filters">
                 <div class="search">
-                    <input type="text" placeholder="Search by name">
-                    <div class="search_btn"><ion-icon class="search_icon" name="search-outline"></ion-icon></div>
+                    <form action="{{ route('shop.search') }}" method="get">
+                        <input type="text" name="searchQuery" placeholder="Search by name" value="{{ request()->input('searchQuery') }}">
+                        <div class="search_btn"><ion-icon class="search_icon" name="search-outline"></ion-icon></div>
+                    </form>
                 </div>
-    
                 <div class="filter_price">
                     <p>Price:</p>
                     <div class="price_form">
