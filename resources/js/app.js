@@ -18,6 +18,9 @@ if(document.querySelector(".size")) {
 if(quantityElem) {
 
     quantityElem.addEventListener('input', () => {
+        if(quantityElem.value <= 0) {
+            quantityElem.value = 1;
+        }
         let shopTotalElem = document.querySelector('.product_details .total');
         let price = document.querySelector('.product_details .price').innerHTML;
 

@@ -52,9 +52,10 @@
                         </div>
                     </div>
                 @endforeach
+                {{ $products->links('livewire.custom-pagination') }}
             </div>
         </div>
         
-        {{ $products->links() }}
+        
     </div>
 @endsection

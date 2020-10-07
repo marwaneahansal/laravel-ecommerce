@@ -57,7 +57,7 @@
                         <div class="product_details">
                             <a href="{{ route('shop.show', $product->formatUrl()) }}">{{ $product->name }}</a>
                             <p class="price">{{ $product->price }}$</p>
-                            @if ($product->quatity < 0)
+                            @if ($product->quantity > 0)
                                 <p class="inStock">In stock</p>
                             @else
                                 <p class="outOfStock">Out of stock</p>
