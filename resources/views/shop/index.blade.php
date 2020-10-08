@@ -6,30 +6,37 @@
         <div class="shop">
             <div class="filters">
                 <div class="search">
-                    <form action="{{ route('shop.search') }}" method="get">
-                        <input type="text" name="searchQuery" placeholder="Search by name" value="{{ request()->input('searchQuery') }}">
-                        <div class="search_btn"><ion-icon class="search_icon" name="search-outline"></ion-icon></div>
+                    <form action="{{ route('shop.search') }}" method="GET">
+                        <input type="text" name="searchQuery" id="searchQuery" placeholder="Search by name" value="{{ request()->input('searchQuery') }}">
+                        <button class="search_btn"><ion-icon class="search_icon" name="search-outline"></ion-icon></button>
                     </form>
+                    <p class="searchErrorText errorText">Please insert a name.</p>
                 </div>
-                <div class="filter_price">
-                    <p>Price:</p>
-                    <div class="price_form">
-                        <div class="min">
-                            <label for="minPrice">Min:</label>
-                            <input type="text" name="minPrice" id="minPrice" placeholder="0">
+                <form action="{{ route('shop.priceFilter') }}" method="GET">
+                    <div class="filter_price">
+                        <p>Price:</p>
+                        <div class="price_form">
+                            <div class="min">
+                                <label for="minPrice">Min:</label>
+                                <input type="text" name="minPrice" id="minPrice" placeholder="0" value="{{ request()->input('minPrice') }}">
+                            </div>
+                            <div class="max">
+                                <label for="maxPrice">Max:</label>
+                                <input type="text" name="maxPrice" id="maxPrice" placeholder="9999" value="{{ request()->input('maxPrice') }}">
+                            </div>
                         </div>
-                        <div class="max">
-                            <label for="maxPrice">Max:</label>
-                            <input type="text" name="maxPrice" id="maxPrice" placeholder="9999">
-                        </div>
+                        <p class="priceErrorText errorText">Please insert at least max price.</p>
+                        <button class="applyBtn">
+                            Apply
+                        </button>
                     </div>
-                    <div class="applyBtn">
-                        <a href="#">Apply</a>
-                    </div>
-                </div>
+                </form>
             </div>
     
             <div class="shop_products">
+                @if (\Route::current()->getName() == 'shop.priceFilter')
+                    <p class="productsCount">Found {{ $products->total() }} products</p>
+                @endif
                 @foreach ($products as $product)
                     <div class="product">
                         <a href="{{ route('shop.show', $product->formatUrl()) }}"><img src="/assets/tracksuits.jpg" alt="tracksuits"></a>
@@ -53,7 +60,7 @@
                         </div>
                     </div>
                 @endforeach
-                {{ $products->links('livewire.custom-pagination') }}
+                {{ $products->withQueryString()->links('livewire.custom-pagination') }}
             </div>
         </div>
         

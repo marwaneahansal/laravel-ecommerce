@@ -27,4 +27,15 @@ class ShopController extends Controller
         $products = Product::where('name', 'like', "%".$searchQuery."%")->Paginate(5);
         return view('shop.search', ['products' => $products]);
     }
+
+    public function applyPriceFilter(Request $request) {
+        $minPrice = $request->input('minPrice');
+        $maxPrice = $request->input('maxPrice');
+        if($minPrice != 0 || $maxPrice != 0) {
+            if(!$minPrice) $minPrice = 0;
+            if(!$maxPrice) $maxPrice = Product::max('price');
+            $products = Product::whereBetween('price', [$minPrice, $maxPrice] )->Paginate(5);
+            return view('shop.index', ['products' => $products]);
+        } 
+    }
 }

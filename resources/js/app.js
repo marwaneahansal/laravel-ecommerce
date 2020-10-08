@@ -28,6 +28,36 @@ if(quantityElem) {
         shopTotalElem.innerHTML = `Total: ${(price * quantityElem.value).toFixed(2)}$`;
 
     });
-
     
+}
+
+
+let applyPriceBtn = document.querySelector('.applyBtn');
+
+if(applyPriceBtn) {
+    applyPriceBtn.addEventListener('click', (event) => {
+        let minPriceElem = document.getElementById('minPrice');
+        let maxPriceElem = document.getElementById('maxPrice');
+        if(maxPriceElem.value != 0 || minPriceElem.value != 0) {
+            minPriceElem.classList.remove('error');
+            maxPriceElem.classList.remove('error');
+        } else {
+            event.preventDefault();
+            minPriceElem.classList.add('error');
+            maxPriceElem.classList.add('error');
+            document.querySelector('.priceErrorText').style.display = "block";
+        }
+    });
+}
+
+
+let searchBtn = document.querySelector('.search_btn');
+
+if(searchBtn) {
+    searchBtn.addEventListener('click', (event) => {
+        if(document.getElementById("searchQuery").value == "") {
+            event.preventDefault();
+            document.querySelector('.searchErrorText').style.display = "block";
+        }
+    });
 }

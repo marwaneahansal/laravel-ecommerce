@@ -19,6 +19,7 @@ use App\Http\Controllers\CartController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/shop', [ShopController::class, 'index'])->name('shop.index');
 Route::get('/shop/search', [ShopController::class, 'search'])->name('shop.search');
+Route::get('/shop/pricefilter', [ShopController::class, 'applyPriceFilter'])->name('shop.priceFilter');
 Route::get('/shop/{name}', [ShopController::class, 'show'])->name('shop.show');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 

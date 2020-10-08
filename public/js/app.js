@@ -21262,6 +21262,36 @@ if (quantityElem) {
   });
 }
 
+var applyPriceBtn = document.querySelector('.applyBtn');
+
+if (applyPriceBtn) {
+  applyPriceBtn.addEventListener('click', function (event) {
+    var minPriceElem = document.getElementById('minPrice');
+    var maxPriceElem = document.getElementById('maxPrice');
+
+    if (maxPriceElem.value != 0 || minPriceElem.value != 0) {
+      minPriceElem.classList.remove('error');
+      maxPriceElem.classList.remove('error');
+    } else {
+      event.preventDefault();
+      minPriceElem.classList.add('error');
+      maxPriceElem.classList.add('error');
+      document.querySelector('.priceErrorText').style.display = "block";
+    }
+  });
+}
+
+var searchBtn = document.querySelector('.search_btn');
+
+if (searchBtn) {
+  searchBtn.addEventListener('click', function (event) {
+    if (document.getElementById("searchQuery").value == "") {
+      event.preventDefault();
+      document.querySelector('.searchErrorText').style.display = "block";
+    }
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

@@ -190,6 +190,7 @@ a {
   padding: 5px;
   margin-left: -1px;
   cursor: pointer;
+  border: none;
   border-radius: 0 5px 5px 0;
   display: flex;
   align-items: center;
@@ -205,6 +206,14 @@ a {
 
 .filters .search form .search_btn:hover {
   background-color: rgba(0, 123, 255, 0.75);
+}
+
+.filters .errorText {
+  color: red;
+  font-size: 1rem !important;
+  margin-left: 10px;
+  margin-top: 10px;
+  display: none;
 }
 
 .filters .filter_price {
@@ -238,7 +247,14 @@ a {
   border-radius: 5px;
 }
 
+.filters .filter_price .price_form .min .error,
+.filters .filter_price .price_form .max .error {
+  border: 2px red solid;
+}
+
 .filters .filter_price .applyBtn {
+  border: none;
+  color: #f8f8f8;
   cursor: pointer;
   display: block;
   width: 90%;
